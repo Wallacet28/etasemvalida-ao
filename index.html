@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cadastro da ETA</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+</head>
+
+<body>
+  <h2>Cadastro da ETA - Horário e Insumo <span id="mesAtual"></span></h2>
+
+  <form id="formulario">
+
+    <!-- Campos sem validação obrigatória -->
+    <label>Horário Funcionamento:<input type="text" id="hf"></label>
+    <label>Insumo Sulfato:<input type="number" step="any" id="insumoSulfato"></label>
+    <label>Insumo Hipoclorito:<input type="number" step="any" id="insumoHipoclorito"></label>
+    <label>Insumo Cal:<input type="number" step="any" id="insumoCal"></label>
+    <label>Insumo Fluossilicato:<input type="number" step="any" id="insumoFluossilicato"></label>
+    <label>Hora Lavagem:<input type="time" id="horaLavagem"></label>
+    <label>Filtro 1 Lavagem:<input type="text" id="filtro1Lavagem"></label>
+    <label>Filtro 2 Lavagem:<input type="text" id="filtro2Lavagem"></label>
+    <label>Observação:<textarea id="observacao"></textarea></label>
+
+    <!-- Novo campo: Assinatura -->
+    <label>Assinatura do Funcionário:<input type="text" id="assinatura"></label>
+
+    <div class="top-buttons">
+      <button type="submit">Salvar</button>
+      <button type="button" onclick="exportarExcel()">📥 Exportar Excel</button>
+      <button type="button" onclick="fazerLogout()">🚪 Sair</button>
+    </div>
+  </form>
+
+  <h3>Registros de <span id="mesAtual" id="diaAtual"></span></h3>
+
+  <label>Visualizar outro dia:</label>
+  <select id="selecionarDia" onchange="atualizarTabela(this.value)"></select>
+
+  <div style="overflow-x: auto">
+    <table id="tabela-registros">
+      <thead>
+        <tr>
+          <th>Horário Funcionamento</th>
+          <th>Insumos Sulfato</th>
+          <th>Insumos Hipoclorito</th>
+          <th>Insumos Cal</th>
+          <th>Insumos Fluossilicato</th>
+          <th>Lavagem</th>
+          <th>Observação</th>
+          <th>Assinatura</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+
+  <footer>
+		<p>&copy; Desenvolvido por Wallace Tadeu 2025</p>
+	</footer>
+
+  <script defer src="login.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
+

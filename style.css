@@ -1,0 +1,115 @@
+/* Reset e corpo geral */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #0D1B2A, #1B263B);
+  color: #E0E1DD;
+  padding: 20px;
+}
+
+/* Container do formulário */
+.container {
+  max-width: 800px;
+  margin: auto;
+  background-color: #1B263B;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+
+h1 {
+  text-align: center;
+  color: #E0E1DD;
+  margin-bottom: 20px;
+}
+
+form label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+form input,
+form textarea,
+form select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #415A77;
+  border-radius: 8px;
+  background-color: #E0E1DD;
+  color: #000;
+}
+
+/* Botões */
+button {
+  margin-top: 20px;
+  padding: 12px 20px;
+  border: none;
+  background-color: #415A77;
+  color: white;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #778DA9;
+}
+
+/* Tabela */
+table {
+  width: 100%;
+  margin-top: 30px;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #E0E1DD;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #415A77;
+  color: #fff;
+}
+
+td {
+  background-color: #E0E1DD;
+  color: #000;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+
+  tr {
+    margin-bottom: 15px;
+  }
+
+  td {
+    padding-left: 50%;
+    position: relative;
+  }
+
+  td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 15px;
+    font-weight: bold;
+    color: #333;
+  }
+}

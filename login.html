@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - Cadastro da ETA</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="login.js"></script>
+</head>
+<body class="login-body">
+  <div class="login-container">
+    <h2>Login do Sistema ETA</h2>
+    <form id="login-form">
+      <label for="usuario">Usuário:</label>
+      <input type="text" id="usuario" required>
+
+      <label for="senha">Senha:</label>
+      <input type="password" id="senha" required>
+
+      <button type="submit">Entrar</button>
+      <p id="erro-login" class="erro">Usuário ou senha inválidos</p>
+    </form>
+  </div>
+</body>
+</html>
