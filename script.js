@@ -11,12 +11,8 @@ window.onload = () => {
   }
 
   const data = new Date();
-  const nomeMes = data.toLocaleDateString("pt-BR", {
-    month: "long",
-    year: "numeric",
-  });
-  document.getElementById("mesAtual").textContent =
-    nomeMes.charAt(0).toUpperCase() + nomeMes.slice(1);
+  const nomeMes = data.toLocaleDateString('pt-BR', { month: 'long', year: 'numeric' });
+  document.getElementById("mesAtual").textContent = nomeMes.charAt(0).toUpperCase() + nomeMes.slice(1);
 
   const salvo = localStorage.getItem(STORAGE_KEY);
   if (salvo) dadosPorDia = JSON.parse(salvo);
@@ -96,7 +92,7 @@ function preencherDias() {
 
 function atualizarTabela(diaSelecionado = null) {
   const hoje = new Date();
-  const nomeAba = diaSelecionado || "Dia " + hoje.getDate().toString().padStart(2, '0');
+  const nomeAba = diaSelecionado || "Dia " + hoje.getDate().toString().padStart(2, "0");
 
   const tbody = document.querySelector("#tabela-registros tbody");
   tbody.innerHTML = "";
@@ -112,7 +108,6 @@ function atualizarTabela(diaSelecionado = null) {
       return td;
     };
 
-    tr.appendChild(td(reg.Data));
     tr.appendChild(td(reg.HF));
     tr.appendChild(td(reg.Insumos.Sulfato));
     tr.appendChild(td(reg.Insumos.Hipoclorito));
@@ -200,4 +195,5 @@ function fazerLogout() {
     window.location.href = "login.html";
   }
 }
+
 
